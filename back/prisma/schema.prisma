@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String    @id @default(uuid())
+  name                String
+  email               String    @unique
+  password            String
+  role                Role
+  avatar              String?
+  refreshToken        String?  
+  projects            Project[] @relation("ManagedProjects")
+  tasks               Task[]    @relation("AssignedTasks")
+  projectsAsDeveloper Project[] @relation("ProjectDevelopers")
+  createdAt           DateTime  @default(now())
+}
+
+
+model Task {
+  id             String     @id @default(uuid())
+  title          String
+  description    String
+  status         TaskStatus @default(TODO)
+  priority       Priority   @default(MEDIUM)
+  estimatedHours Float?
+  actualHours    Float?
+  dueDate        DateTime
+  createdAt      DateTime   @default(now())
+
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId String
+
+  assignedTo   String?
+  assignedUser User?   @relation("AssignedTasks", fields: [assignedTo], references: [id], onDelete: SetNull)
+}
+
+model Project {
+  id          String        @id @default(uuid())
+  name        String
+  description String
+  status      ProjectStatus @default(PLANNING)
+  priority    Priority      @default(MEDIUM)
+  startDate   DateTime
+  endDate     DateTime
+
+  manager   User   @relation("ManagedProjects", fields: [managerId], references: [id], onDelete: Cascade)
+  managerId String
+
+  developers User[] @relation("ProjectDevelopers")
+  tasks      Task[]
+
+  createdAt DateTime @default(now())
+  deletedAt   DateTime?
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  DEVELOPER
+}
+
+enum ProjectStatus {
+  PLANNING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  REVIEW
+  DONE
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
