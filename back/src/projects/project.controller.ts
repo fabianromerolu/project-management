@@ -15,15 +15,13 @@ export const create = async (req: AuthenticatedRequest, res: Response) => {
       const io = req.app.get("io");
       io?.emit("project:created", project);
     }
-
-
     res.status(201).json(project);
   } catch (err: any) {
     res.status(400).json({ error: err.message });
   }
 };
 
-export const listProjects = async (req: Request, res: Response) => {
+export const listProjects = async (req: AuthenticatedRequest, res: Response) => {
   try {
     const { page = "1", limit = "10", status, priority, orderBy, orderDir } = req.query;
 

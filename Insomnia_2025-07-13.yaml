@@ -1,0 +1,529 @@
+type: collection.insomnia.rest/5.0
+name: project-management
+meta:
+  id: wrk_dacd9a31bc9543a18958373e3bb4d299
+  created: 1752259074441
+  modified: 1752440703961
+  description: ""
+collection:
+  - url: http://localhost:4000/auth/login
+    name: login
+    meta:
+      id: req_663210ca9ec34dd6b2fc2c0095815426
+      created: 1752259111355
+      modified: 1752426573121
+      isPrivate: false
+      description: ""
+      sortKey: -1752259111355
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "eibaavi2019@gmail.com",
+          "password": "Dindon12345*"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects
+    name: New project
+    meta:
+      id: req_24bb5ad964fc4b9cbeca5661836f8a07
+      created: 1752260715890
+      modified: 1752440798058
+      isPrivate: false
+      description: ""
+      sortKey: -1752260715890
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "Proyecto de rba",
+          "description": "Un proyecto de ejemplo",
+          "status": "PLANNING",
+          "priority": "HIGH",
+          "startDate": "2025-07-12",
+          "endDate": "2025-07-30",
+          "developersIds": ["b5363495-c58c-406c-9e4e-eda9e8c586f6"]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI1MzYzNDk1LWM1OGMtNDA2Yy05ZTRlLWVkYTllOGM1ODZmNiIsImlhdCI6MTc1MjQzMjA2OCwiZXhwIjoxNzUzMDM2ODY4fQ.G2snxq8st8lTRL_8id0Jzi-wcvgr0axmD4CATsiDGq8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects
+    name: get projects
+    meta:
+      id: req_7cb373ccd8c846948e1e755e119f4bb9
+      created: 1752261007724
+      modified: 1752440792040
+      isPrivate: false
+      description: ""
+      sortKey: -1752261007724
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI1MzYzNDk1LWM1OGMtNDA2Yy05ZTRlLWVkYTllOGM1ODZmNiIsImlhdCI6MTc1MjQzNDAzMiwiZXhwIjoxNzUzMDM4ODMyfQ.8PSoyBmiQY2m8nkLQhaX6uqAZdJfYhYKvs74qmie5E4
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/auth/register
+    name: register user
+    meta:
+      id: req_7a71ed9111f749a386e3b283f8a228ea
+      created: 1752262073088
+      modified: 1752262158657
+      isPrivate: false
+      description: ""
+      sortKey: -1752262073088
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Fabian Romero",
+          "email": "fabianromerolu@gmail.com",
+          "password": "Holamundo12345*",
+          "role": "MANAGER"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/auth/profile
+    name: ver perfil
+    meta:
+      id: req_a0bebc17bb9146009097672c22f5cd4f
+      created: 1752262195960
+      modified: 1752428958877
+      isPrivate: false
+      description: ""
+      sortKey: -1752262195960
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI1MzYzNDk1LWM1OGMtNDA2Yy05ZTRlLWVkYTllOGM1ODZmNiIsImlhdCI6MTc1MjQyODkyMiwiZXhwIjoxNzUzMDMzNzIyfQ.6bLHCdDJxLs4k4xcYvemUnquPPdZAo-qqe6lvLbBvFA
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects/876dcae1-9a36-4339-905f-1f3f73cbae89/tasks
+    name: crear tarea en proyecto
+    meta:
+      id: req_b3bc9c69fe1a4aa69a61813b1ce0a5ec
+      created: 1752262325377
+      modified: 1752420729809
+      isPrivate: false
+      description: ""
+      sortKey: -1752262325377
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "title": "Diseñar base de datos",
+          "description": "Definir relaciones",
+          "status": "TODO",
+          "priority": "MEDIUM",
+          "assignedTo": "565ffbae-033c-4d05-b8ea-e0c12e382209",
+          "estimatedHours": 5,
+          "dueDate": "2025-07-20T00:00:00.000Z"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU2NWZmYmFlLTAzM2MtNGQwNS1iOGVhLWUwYzEyZTM4MjIwOSIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyNDIwNjc2LCJleHAiOjE3NTI0MjE1NzZ9.SjFdalZ1mYPIby4heuy2CyuR7MlEVkykVvNrVYFqGLU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects/4b0326ac-72c9-4dbc-8a96-5d08deee7488
+    name: project por id
+    meta:
+      id: req_b636f72b94274758862719d7ca63404e
+      created: 1752263762576
+      modified: 1752440784508
+      isPrivate: false
+      description: ""
+      sortKey: -1752263762576
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjllNGEzMTBhLWYyMjgtNDdlOS1iYjVkLTA0NjMyY2VjODc5YiIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjYzNjM2LCJleHAiOjE3NTIyNjQ1MzZ9.F41aK24ePZWkLskAYNsYbS0XnlwxyqLzwIabxnpDTo8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects/a4fee6f5-adbc-49f2-a90a-b559d64839e9
+    name: actualizar project
+    meta:
+      id: req_53e6c295f28a46909f48049664a40948
+      created: 1752263833107
+      modified: 1752440777839
+      isPrivate: false
+      description: ""
+      sortKey: -1752263833107
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Gestor Proyectos V2",
+          "description": "App para gestionar equipos de desarrollo",
+          "status": "PLANNING",
+          "priority": "HIGH",
+          "startDate": "2025-07-12T00:00:00.000Z",
+          "endDate": "2025-08-12T00:00:00.000Z",
+          "developersIds": ["9e4a310a-f228-47e9-bb5d-04632cec879b"]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjllNGEzMTBhLWYyMjgtNDdlOS1iYjVkLTA0NjMyY2VjODc5YiIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjY0NTIyLCJleHAiOjE3NTIyNjU0MjJ9.5Md56an4ldzLphenQHXePbrx-xKpol15QuFmL3NWlzA
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects/fad9a3ee-3e6b-4089-88ed-4cba66e8ef7b
+    name: delete project
+    meta:
+      id: req_89186701a69c4647966fbff599928bd8
+      created: 1752263921612
+      modified: 1752440760774
+      isPrivate: false
+      description: ""
+      sortKey: -1752263921612
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ODJhZmIzLTBmMzMtNDIzNC1iMThmLWYzZDM4NWNkMzE5ZSIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjY3OTk2LCJleHAiOjE3NTIyNjg4OTZ9.5JhzhpEmcUfLS-gr2huK_cf_fiSbHdy7jcOuBv__9tw
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects/4c985a15-214f-4506-89fd-5d9d92557467/tasks
+    name: get tareas de proyecto
+    meta:
+      id: req_5bc5fa9a255349cf908eaa0d4792202d
+      created: 1752268557917
+      modified: 1752269619184
+      isPrivate: false
+      description: ""
+      sortKey: -1752268557917
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ODJhZmIzLTBmMzMtNDIzNC1iMThmLWYzZDM4NWNkMzE5ZSIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjY5NTYwLCJleHAiOjE3NTIyNzA0NjB9.IUZJ32NWNp9u2QwKGmPBPPvhJT1kz1LAbWO2trCv6XQ
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects/4c985a15-214f-4506-89fd-5d9d92557467/tasks/5ffb0bb6-4471-4706-9f42-af0b0188e431
+    name: actu tarea en proyecto
+    meta:
+      id: req_456af91ab2fd4f38ad8d5427f2a78647
+      created: 1752268787579
+      modified: 1752269812674
+      isPrivate: false
+      description: ""
+      sortKey: -1752268787579
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "title": "Diseñar front",
+          "description": "Definir relaciones",
+          "status": "TODO",
+          "priority": "MEDIUM",
+          "assignedTo": "e482afb3-0f33-4234-b18f-f3d385cd319e",
+          "estimatedHours": 5,
+          "dueDate": "2025-07-20T00:00:00.000Z"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ODJhZmIzLTBmMzMtNDIzNC1iMThmLWYzZDM4NWNkMzE5ZSIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjY5ODAzLCJleHAiOjE3NTIyNzA3MDN9.uOmhuw_3MpT3Dk7Tzvgj04JejSS9mmz0nsE7b5BUpxA
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/projects/4c985a15-214f-4506-89fd-5d9d92557467/tasks/5ffb0bb6-4471-4706-9f42-af0b0188e431
+    name: delete task project
+    meta:
+      id: req_360a7aa8e85f4e3ab7228afe623fc09a
+      created: 1752269900451
+      modified: 1752440765834
+      isPrivate: false
+      description: ""
+      sortKey: -1752269900451
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ODJhZmIzLTBmMzMtNDIzNC1iMThmLWYzZDM4NWNkMzE5ZSIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjY5ODAzLCJleHAiOjE3NTIyNzA3MDN9.uOmhuw_3MpT3Dk7Tzvgj04JejSS9mmz0nsE7b5BUpxA
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/users?page=1&limit=5
+    name: obtener desarroladores
+    meta:
+      id: req_347d8c342cf746eabe2dfdf3c4cb14fc
+      created: 1752270537776
+      modified: 1752270901458
+      isPrivate: false
+      description: ""
+      sortKey: -1752270537776
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ODJhZmIzLTBmMzMtNDIzNC1iMThmLWYzZDM4NWNkMzE5ZSIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjcwNTM2LCJleHAiOjE3NTIyNzE0MzZ9.fQIJ8mAoDPm39Ni5dHLxxqM8_DjBx7cFi-R7wyk31gs
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/users
+    name: crear desarrolador
+    meta:
+      id: req_3f2191999ee64dc3905176e062903920
+      created: 1752270865137
+      modified: 1752271043942
+      isPrivate: false
+      description: ""
+      sortKey: -1752270865137
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Luis Pérez",
+          "email": "luis@example.com",
+          "password": "123456",
+          "avatar": "https://i.pravatar.cc/150?img=3"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ODJhZmIzLTBmMzMtNDIzNC1iMThmLWYzZDM4NWNkMzE5ZSIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjcwOTEwLCJleHAiOjE3NTIyNzE4MTB9.rd9Ja2bCUkiFntK9UkOqPVPLJy56k3pWYMck5_mw5P8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/users/f4c42653-901e-4a13-84bf-d403fd3c2bde
+    name: actualizar desarrollador
+    meta:
+      id: req_a6b039c44953413e992b2b92d8e87f70
+      created: 1752271052908
+      modified: 1752274361084
+      isPrivate: false
+      description: ""
+      sortKey: -1752271052908
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Luisita Pérez",
+          "email": "luis@example.com",
+          "password": "123456",
+          "avatar": "https://i.pravatar.cc/150?img=3"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ODJhZmIzLTBmMzMtNDIzNC1iMThmLWYzZDM4NWNkMzE5ZSIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyMjcxMDc1LCJleHAiOjE3NTIyNzE5NzV9.jHYjOke33jxRCaN-yA3LwxKUEdKvSvGzoYeJ8i03tVc
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:4000/auth/refresh
+    name: refresh token user
+    meta:
+      id: req_34ba0aff3a824c328a08a76f4f235534
+      created: 1752274378002
+      modified: 1752274900017
+      isPrivate: false
+      description: ""
+      sortKey: -1752274378002
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+          "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ODJhZmIzLTBmMzMtNDIzNC1iMThmLWYzZDM4NWNkMzE5ZSIsImlhdCI6MTc1MjI3NDM4MywiZXhwIjoxNzUyODc5MTgzfQ.qBGkvGSkl5G8DwykBKKF-DgKl-HIiunqfOO7KrnFAsA"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_3d648a7713dbccf3d67368e671d6ce06844dfb4e
+    created: 1752259074500
+    modified: 1752434807322
+  cookies:
+    - key: accessToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI1MzYzNDk1LWM1OGMtNDA2Yy05ZTRlLWVkYTllOGM1ODZmNiIsInJvbGUiOiJNQU5BR0VSIiwiaWF0IjoxNzUyNDM0ODA3LCJleHAiOjE3NTI0MzU3MDd9.c9G4TJeUAGTTZopKRQ1uvDE9fI0hvE2wTrLJRRcjAYk
+      maxAge: 900
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-07-13T17:48:34.647Z
+      lastAccessed: 2025-07-13T19:26:47.321Z
+      sameSite: lax
+      id: 3f6a7c9a-60d3-468e-8b06-ccd774084e22
+    - key: refreshToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI1MzYzNDk1LWM1OGMtNDA2Yy05ZTRlLWVkYTllOGM1ODZmNiIsImlhdCI6MTc1MjQzNDgwNywiZXhwIjoxNzUzMDM5NjA3fQ.PvU5jWJUhCFikTSEvjgX6IewohGY8w8zzhWOXOHkOFk
+      maxAge: 604800
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-07-13T17:48:34.650Z
+      lastAccessed: 2025-07-13T19:26:47.322Z
+      sameSite: lax
+      id: 2ec7e31f-728b-4cf2-a569-c8f096845558
+environments:
+  name: Base Environment
+  meta:
+    id: env_3d648a7713dbccf3d67368e671d6ce06844dfb4e
+    created: 1752259074467
+    modified: 1752259074467
+    isPrivate: false

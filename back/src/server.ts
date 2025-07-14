@@ -21,7 +21,7 @@ export const startServer = () => {
 
   const io = new Server(server, {
     cors: {
-      origin: "http://localhost:5432", //frontend
+      origin: "http://localhost:3000", //frontend
       methods: ["GET", "POST", "PUT", "DELETE"],
       credentials: true,
     },

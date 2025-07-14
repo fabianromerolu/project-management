@@ -1,6 +1,6 @@
 // src/auth/auth.routes.ts
 import { Router } from "express";
-import { login, register, getProfile, refresh } from "./auth.controller";
+import { login, register, getProfile, refresh, logout } from "./auth.controller";
 import { authenticate } from "./authMiddleware";
 
 const router = Router();
@@ -81,5 +81,15 @@ router.post("/refresh", refresh);
  */
 router.get("/profile", authenticate, getProfile);
 
-
+router.post("/logout", logout);
+/**
+ * @swagger
+ * /auth/logout:
+ *   post:
+ *     summary: Cerrar sesión del usuario
+ *     tags: [Auth]
+ *     responses:
+ *       200:
+ *         description: Sesión cerrada exitosamente
+ */
 export default router;

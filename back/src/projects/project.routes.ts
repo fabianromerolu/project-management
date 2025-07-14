@@ -4,6 +4,8 @@ import * as controller from "./project.controller";
 import { authenticate } from "../auth/authMiddleware";
 import { authorize } from "../auth/roleMiddleware";
 
+
+
 const router = Router();
 
 router.use(authenticate);
@@ -37,7 +39,7 @@ router.use(authenticate);
  *       200:
  *         description: Lista de proyectos
  */
-router.get("/", controller.listProjects);
+router.get("/", authenticate, controller.listProjects);
 
 /**
  * @swagger
